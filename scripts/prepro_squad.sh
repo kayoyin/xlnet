@@ -5,14 +5,14 @@ SQUAD_DIR=data/squad
 INIT_CKPT_DIR=xlnet_cased_L-24_H-1024_A-16
 
 #### google storage path
-GS_ROOT=
+GS_ROOT=~/store
 GS_PROC_DATA_DIR=${GS_ROOT}/proc_data/squad
 
 python run_squad.py \
   --use_tpu=False \
   --do_prepro=True \
   --spiece_model_file=${INIT_CKPT_DIR}/spiece.model \
-  --train_file=${SQUAD_DIR}/train-v2.0.json \
+  --train_file=${SQUAD_DIR}/id_train.json \
   --output_dir=${GS_PROC_DATA_DIR} \
   --uncased=False \
   --max_seq_length=512 \
